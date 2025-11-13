@@ -10,8 +10,10 @@ function App() {
     </div>
     <br /><br />
     <div className="container">
-      <TextForm heading="Enter your Details below to Enter Main Dashboard" />
+      <TextForm heading="Enter your Desired Inputs here !!!"/>
     </div>
+
+    
     <br /><br />
     </>
   );
