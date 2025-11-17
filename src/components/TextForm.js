@@ -26,6 +26,12 @@ export default function TextForm(props) {
     setText("");
   }
 
+  const handleCopy= ()=>{
+    let text= document.getElementById("myBox");
+    text.select();
+    navigator.clipboard.writeText(text.value);
+  }
+
   return (
     <div>
         <h1>{props.heading}</h1>
@@ -37,7 +43,9 @@ export default function TextForm(props) {
   <button className="btn btn-primary" onClick={handleUpClick} >To UpperCase</button>&nbsp;
   <button className="btn btn-primary" onClick={handleLowClick} >To LowerCase</button>&nbsp;
   <button className="btn btn-primary" onClick={handleCapital} >Captilize Word</button>&nbsp;
+    <button className="btn btn-primary" onClick={handleCopy} >CopyText</button>&nbsp;
   <button className="btn btn-danger" onClick={handleClear} >Clear Box</button>
+
 
   
 <br /><br />
