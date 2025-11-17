@@ -6,12 +6,14 @@ export default function TextForm(props) {
   const [text, setText] = useState('');
   const handleUpClick= ()=>{
       let newText= text.toUpperCase();
-      setText(newText);
+      setText(newText)
+      props.showAlert("Converted to UpperCase Successfully!!!","success")
     }
   
   const handleLowClick= ()=> {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to LowerCase Successfully!!!","success")
   }
   const handleOnChange= (event)=>{
       setText(event.target.value);
@@ -20,16 +22,19 @@ export default function TextForm(props) {
   const handleCapital= ()=> {
     let newText = text.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
     setText(newText);
+    props.showAlert("Converted to Capitalized Format Successfully!!!","success")
   }
 
   const handleClear= ()=> {
     setText("");
+    props.showAlert("Text Box is Cleared!!!","success")
   }
 
   const handleCopy= ()=>{
     let text= document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Text Copied!!!","success")
   }
 
   return (
