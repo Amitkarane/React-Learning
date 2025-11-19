@@ -38,18 +38,19 @@ export default function TextForm(props) {
   }
 
   return (
-    <div>
+
+    <div className='container'>
         <h1>{props.heading}</h1>
     <div className="mb-3">
 </div>
 <div className="mb-3">
   <textarea className="form-control" value={text} id="myBox" rows="3" onChange={handleOnChange} placeholder="Enter your text here..."></textarea>
   <br />
-  <button className="btn btn-primary" onClick={handleUpClick} >To UpperCase</button>&nbsp;
-  <button className="btn btn-primary" onClick={handleLowClick} >To LowerCase</button>&nbsp;
-  <button className="btn btn-primary" onClick={handleCapital} >Captilize Word</button>&nbsp;
-    <button className="btn btn-primary" onClick={handleCopy} >CopyText</button>&nbsp;
-  <button className="btn btn-danger" onClick={handleClear} >Clear Box</button>
+  <button className="btn btn-primary my-3" onClick={handleUpClick} >To UpperCase</button>&nbsp;
+  <button className="btn btn-primary my-3" onClick={handleLowClick} >To LowerCase</button>&nbsp;
+  <button className="btn btn-primary my-3" onClick={handleCapital} >Captilize Word</button>&nbsp;
+    <button className="btn btn-primary my-3" onClick={handleCopy} >CopyText</button>&nbsp;
+  <button className="btn btn-danger my-3" onClick={handleClear} >Clear Box</button>
 
 
   

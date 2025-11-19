@@ -1,8 +1,15 @@
 import './App.css';
 import ALert from './components/ALert';
+import Discord from './components/Discord';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 function App() {
@@ -47,20 +54,33 @@ function App() {
     })
   }
 
+  setTimeout(() => {
+    SetAlert(null);
+  }, 3000);
+
   return (
+    <Router>
     <div style={myStyle}>
     <div className="NavBar">
     <Navbar title="PRIME GAMING" link="Discord" toggleMode={toggleMode} btnText={btnText} />
     </div>
     <ALert alert={alert} />
     <br /><br />
-    <div className="container">
-      <TextForm heading="Enter your Desired Inputs here !!!" showAlert={showAlert}/>
-    </div>
+    
+    <Switch>
+          {/* exact so it doesn't swallow /discord */}
+          <Route exact path="/">
+            <TextForm heading="Enter your Desired Inputs here !!!" showAlert={showAlert} />
+          </Route>
 
+          <Route path="/discord">
+            <Discord />
+          </Route>
+    </Switch>
     
     <br /><br />
     </div>
+    </Router>
   );
 }
 
